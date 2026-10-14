@@ -23,7 +23,7 @@ def run():
             if len(leads_today) >= DAILY_TARGET: break
             
             # 2. Get details (photo count, reviews)
-            details = gmaps.place(place_id=place["place_id"], fields=["name","formatted_address","formatted_phone_number","website","photos","user_ratings_total","rating","url"])["result"]
+            details = gmaps.place(place_id=place["place_id"], fields=["name","formatted_address","formatted_phone_number","website","photo","user_ratings_total","rating","url"])["result"]
             
             # 3. Vet
             vetted, score = is_vetted({"details": details})
